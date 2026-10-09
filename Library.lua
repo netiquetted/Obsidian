@@ -2095,7 +2095,7 @@ function Library:SetIconModule(module: IconModule)
     ArrowIcon = Library:GetIcon("chevron-up")
     ResizeIcon = Library:GetIcon("move-diagonal-2")
     KeyIcon = Library:GetIcon("key")
-    MoveIcon = Library:GetIcon("grip")
+    MoveIcon = Library:GetIcon("move")
     PopOutIcon = Library:GetIcon("square-arrow-down-left")
     CloseIcon = Library:GetIcon("x")
 end
