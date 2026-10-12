@@ -20098,24 +20098,8 @@ function Library:CreateWindow(WindowInfo)
                 Visible = false,
                 Parent = SubTabBar,
             })
-            New("UIGradient", {
-                --// Font colour at the ends, accent in the middle
-                Color = function()
-                    return ColorSequence.new({
-                        ColorSequenceKeypoint.new(0, Library.Scheme.FontColor),
-                        ColorSequenceKeypoint.new(0.5, Library.Scheme.AccentColor),
-                        ColorSequenceKeypoint.new(1, Library.Scheme.FontColor),
-                    })
-                end,
-                --// Extra keypoints either side of the middle round the falloff off,
-                --// so the ends taper away instead of ramping linearly
-                Transparency = NumberSequence.new({
-                    NumberSequenceKeypoint.new(0, 1),
-                    NumberSequenceKeypoint.new(0.2, 0.85),
-                    NumberSequenceKeypoint.new(0.5, 0.1),
-                    NumberSequenceKeypoint.new(0.8, 0.85),
-                    NumberSequenceKeypoint.new(1, 1),
-                }),
+            New("UICorner", {
+                CornerRadius = UDim.new(1, 0),
                 Parent = SubTabUnderline,
             })
 
