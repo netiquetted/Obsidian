@@ -3192,7 +3192,7 @@ local SUBTAB_ICON_SIZE = 16
 local SUBTAB_SLIDE_TWEEN = TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out)
 --// Fraction of the chip the underline spans, and its gap above the chip's bottom edge
 local SUBTAB_UNDERLINE_WIDTH = 0.66
-local SUBTAB_UNDERLINE_GAP = 3
+local SUBTAB_UNDERLINE_GAP = 5
 --// The tab row sits flush in the 34px header; the open tab is a soft pill in
 --// the element colour that slides between tabs, with a short accent marker
 --// under its label
@@ -20152,7 +20152,7 @@ function Library:CreateWindow(WindowInfo)
                     math.floor(OffsetX + (Width - LineWidth) / 2),
                     Bottom - SUBTAB_UNDERLINE_GAP
                 ),
-                Size = UDim2.fromOffset(LineWidth, 1),
+                Size = UDim2.fromOffset(LineWidth, 2),
             }
 
             if SubTabUnderlineTween then
@@ -20207,7 +20207,7 @@ function Library:CreateWindow(WindowInfo)
                         math.floor(FinalOffsetX + (FinalWidth - FinalLineWidth) / 2),
                         FinalBottom - SUBTAB_UNDERLINE_GAP
                     )
-                    SubTabUnderline.Size = UDim2.fromOffset(FinalLineWidth, 1)
+                    SubTabUnderline.Size = UDim2.fromOffset(FinalLineWidth, 2)
                     SubTabUnderline.Visible = true
                 end)
 
