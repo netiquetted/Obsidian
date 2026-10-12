@@ -20093,8 +20093,8 @@ function Library:CreateWindow(WindowInfo)
                 AnchorPoint = Vector2.new(0, 1),
                 BackgroundColor3 = "AccentColor",
                 BorderSizePixel = 0,
-                Position = UDim2.new(0, 0, 1, 0),
-                Size = UDim2.fromOffset(0, 1),
+                Position = UDim2.new(0, 0, 1, 3),
+                Size = UDim2.fromOffset(0, 2),
                 Visible = false,
                 Parent = SubTabBar,
             })
