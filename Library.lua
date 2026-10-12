@@ -2829,11 +2829,6 @@ local TAB_CHIP_SHADE = ColorSequence.new({
     ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)),
     ColorSequenceKeypoint.new(1, Color3.fromRGB(194, 194, 194)),
 })
-local TAB_CHIP_RIM = NumberSequence.new({
-    NumberSequenceKeypoint.new(0, 0),
-    NumberSequenceKeypoint.new(0.45, 0.85),
-    NumberSequenceKeypoint.new(1, 1),
-})
 
 --// Every skinned tab button, so a sidebar width change can reach all of them
 Library.TabSkins = setmetatable({}, { __mode = "k" })
@@ -2905,11 +2900,6 @@ function Library:SkinTabButton(Button: TextButton)
         Thickness = 1,
         Transparency = 1,
         Parent = Chip,
-    })
-    New("UIGradient", {
-        Rotation = 90,
-        Transparency = TAB_CHIP_RIM,
-        Parent = Rim,
     })
 
     --// The edge marker: a short accent bar hard against the sidebar's left inner
