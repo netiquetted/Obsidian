@@ -2819,15 +2819,14 @@ local TAB_TRAVEL_TWEEN = TweenInfo.new(0.28, Enum.EasingStyle.Quint, Enum.Easing
 local TAB_MARKER_TRAVEL = 16
 local TAB_CHIP_TRAVEL = 7
 
-local TAB_MARKER_TAPER = NumberSequence.new({
-    NumberSequenceKeypoint.new(0, 0.55),
-    NumberSequenceKeypoint.new(0.5, 0),
-    NumberSequenceKeypoint.new(1, 0.55),
-})
-
 local TAB_CHIP_SHADE = ColorSequence.new({
     ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)),
     ColorSequenceKeypoint.new(1, Color3.fromRGB(194, 194, 194)),
+})
+local TAB_CHIP_RIM = NumberSequence.new({
+    NumberSequenceKeypoint.new(0, 0),
+    NumberSequenceKeypoint.new(0.45, 0.85),
+    NumberSequenceKeypoint.new(1, 1),
 })
 
 --// Every skinned tab button, so a sidebar width change can reach all of them
@@ -2901,6 +2900,11 @@ function Library:SkinTabButton(Button: TextButton)
         Transparency = 1,
         Parent = Chip,
     })
+    New("UIGradient", {
+        Rotation = 90,
+        Transparency = TAB_CHIP_RIM,
+        Parent = Rim,
+    })
 
     --// The edge marker: a short accent bar hard against the sidebar's left inner
     --// edge, level with the chip. The tab list is inset by its own gutter, so the
@@ -2921,11 +2925,6 @@ function Library:SkinTabButton(Button: TextButton)
     })
     New("UICorner", {
         CornerRadius = UDim.new(1, 0),
-        Parent = Marker,
-    })
-    New("UIGradient", {
-        Rotation = 90,
-        Transparency = TAB_MARKER_TAPER,
         Parent = Marker,
     })
 
