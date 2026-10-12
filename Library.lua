@@ -3192,7 +3192,7 @@ local SUBTAB_ICON_SIZE = 16
 local SUBTAB_SLIDE_TWEEN = TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out)
 --// Fraction of the chip the underline spans, and its gap above the chip's bottom edge
 local SUBTAB_UNDERLINE_WIDTH = 0.66
-local SUBTAB_UNDERLINE_GAP = 5
+local SUBTAB_UNDERLINE_GAP = 0
 --// The tab row sits flush in the 34px header; the open tab is a soft pill in
 --// the element colour that slides between tabs, with a short accent marker
 --// under its label
